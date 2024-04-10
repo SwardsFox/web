@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
-  Date: 2024/4/9
-  Time: 22:19
+  Date: 2024/4/10
+  Time: 23:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>医院挂号系统</title>
+    <title>后台登录界面</title>
 </head>
 <body>
-<p>医院挂号系统</p>
+
 </body>
 </html>
