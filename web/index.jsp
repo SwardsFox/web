@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>医院挂号系统</title>
+    <title>Title</title>
 </head>
 <body>
-<p>医院挂号系统</p>
+我是急急急
 </body>
 </html>
