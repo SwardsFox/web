@@ -11,7 +11,7 @@
  Target Server Version : 80300
  File Encoding         : 65001
 
- Date: 11/04/2024 10:54:25
+ Date: 11/04/2024 22:24:51
 */
 
 SET NAMES utf8mb4;
@@ -43,23 +43,23 @@ CREATE TABLE `appointment`  (
 DROP TABLE IF EXISTS `doctor`;
 CREATE TABLE `doctor`  (
   `DoctorID` int NOT NULL AUTO_INCREMENT COMMENT '用户id',
-  `Username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '账号',
+  `Doctorname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '账号',
+  `Username` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '医生名字',
   `Password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '密码',
-  `DoctorName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '医生名字',
-  `Gender` enum('男','女','未填写') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT '未填写' COMMENT '性别',
+  `Gender` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT '未填写' COMMENT '性别',
   `Title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '职称',
-  `Role` enum('doctor','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'doctor' COMMENT '权限',
+  `Role` enum('DOCTOR','ADMIN') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'DOCTOR' COMMENT '权限',
   `Department` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '科室',
   PRIMARY KEY (`DoctorID`, `Role`) USING BTREE,
-  UNIQUE INDEX `Username`(`Username` ASC) USING BTREE
+  UNIQUE INDEX `Username`(`Doctorname` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of doctor
 -- ----------------------------
-INSERT INTO `doctor` VALUES (1, '岳文昌', 'ywcdoctor', 'ywc123', '男', '主任医师', 'doctor', '泌尿科');
-INSERT INTO `doctor` VALUES (2, '王科', 'wkdoctor', 'wk123', '男', '主任医师', 'doctor', '泌尿科');
-INSERT INTO `doctor` VALUES (3, '刘宝海', 'lbhdoctor', 'lbh123', '男', '院长', 'admin', '喝茶科');
+INSERT INTO `doctor` VALUES (1, '岳文昌', 'ywcdoctor', 'ywcdoctor', '男', '主任医师', 'DOCTOR', '泌尿科');
+INSERT INTO `doctor` VALUES (2, '王科', 'wkdoctor', 'wkdoctor', '男', '主任医师', 'DOCTOR', '泌尿科');
+INSERT INTO `doctor` VALUES (3, '刘宝海', 'lbh123', 'lbhdoctor', '男', '院长', 'ADMIN', '喝茶科');
 
 -- ----------------------------
 -- Table structure for systemsettings
@@ -103,7 +103,7 @@ CREATE TABLE `user`  (
   `Password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Nickname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `Name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Gender` enum('男','女','武装直升机','沃尔玛购物袋','其他') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT '其他',
+  `Gender` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT '其他',
   `Phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`UserID`) USING BTREE,
   UNIQUE INDEX `Username`(`Username` ASC) USING BTREE
@@ -112,6 +112,6 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'lzpatient', 'lz123', '刘先生', '刘振', NULL, '114514');
+INSERT INTO `user` VALUES (1, 'lzpatient', 'lz123', '刘先生', '刘振', '沃尔玛购物袋', '114514');
 
 SET FOREIGN_KEY_CHECKS = 1;
