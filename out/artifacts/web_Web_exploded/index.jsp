@@ -12,8 +12,8 @@
 </head>
 <body>
 我是急急急
-<a href="hello">111</a><br>
-<a href="hello">111</a>
+<a href="image/d6k88-7z5xc-001.jpg">图片</a><br>
+<a href="view/login.jsp">登录页面</a>
 
 </body>
 </html>

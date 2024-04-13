@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DatabaseConnection {
     //JDBC连接代码
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/users?serverTimezone=GMT%2B8";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/docsys?serverTimezone=GMT%2B8";
 
     //数据库凭证
     static final String USER = "root";
