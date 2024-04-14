@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>医生后台管理登录</title>
     <link href="../css/login.css" rel="styleSheet">
     <style>
         .error-message {
